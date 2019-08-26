@@ -62,3 +62,14 @@ random.shuffle(list1)
 print(list1)
 list2 = list1[0:3]
 print(list2)
+
+print("-----generate list-----")
+list1 = [True] * 2 + [False] * 3
+print(list1)
+list1 = [1, "a"] * 5
+print(list1)
+list1 = [random.randint(1,5)] * 5  # same number
+print(list1)
+import numpy
+list1 = numpy.random.randint(10, size=5)
+print(list1)
