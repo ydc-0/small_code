@@ -1,0 +1,22 @@
+import collections
+d = collections.deque([1, 2, 3], maxlen=3)
+print(d)
+# -> deque([1, 2, 3], maxlen=3)
+d.append(4)
+print(d)
+# -> deque([2, 3, 4], maxlen=3)
+d.appendleft(1)
+print(d)
+# -> deque([1, 2, 3], maxlen=3)
+print(d.pop())
+print(d)
+# -> 3
+# -> deque([1, 2], maxlen=3)
+d.append(3)
+d.rotate(1)
+print(d)
+# -> deque([3, 1, 2], maxlen=3)
+print(d.count(2))  # 1
+d.remove(2)
+print(d)
+# -> deque([3, 1], maxlen=3)

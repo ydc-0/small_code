@@ -1,3 +1,5 @@
+import numpy
+import random
 import copy
 
 print("list ...")
@@ -36,7 +38,7 @@ print("\ncopy/deepcopy ...")
 dict1 = {"a": 1, "b": 2}
 dict2 = dict1
 dict1["a"] = 3
-print(id(dict1),id(dict2))
+print(id(dict1), id(dict2))
 print(dict1, dict2)
 
 dict1 = {"a": 1, "b": 2}
@@ -55,9 +57,8 @@ dict2 = copy.deepcopy(dict1)
 dict1["a"][1] = 21
 print(dict1, dict2)
 
-import random
 
-list1 = [1,2,3,4,5,6,7]
+list1 = [1, 2, 3, 4, 5, 6, 7]
 random.shuffle(list1)
 print(list1)
 list2 = list1[0:3]
@@ -68,8 +69,26 @@ list1 = [True] * 2 + [False] * 3
 print(list1)
 list1 = [1, "a"] * 5
 print(list1)
-list1 = [random.randint(1,5)] * 5  # same number
+list1 = [random.randint(1, 5)] * 5  # same number
 print(list1)
-import numpy
 list1 = numpy.random.randint(10, size=5)
 print(list1)
+
+# max&min and index
+a = [2, 6, 3, 9, 3, 5, 1, 4]
+print(max(a))
+print(a.index(9))
+print(a[0:5:2])  # [start, end)， step
+print(a[3::-1])  # a[3],a[2],a[1],a[0]
+
+
+# 集合 set {...}
+seta = set([1, 2, 3])
+setb = set([3, 4]) 
+print(setb.intersection(seta)) # 交集 ==> {3}
+print(setb.union(seta)) # 并集 ==> {1, 2, 3, 4}
+print(setb.difference(seta)) # 差集 ==> {4}
+print(seta|setb) # 并集
+print(seta&setb) # 交集
+print(seta^setb) # 补集
+print(set() < seta) # seta 是空集的父集
