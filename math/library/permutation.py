@@ -31,4 +31,4 @@ array = [1, 2, 3]
 print(list(itertools.product(array, repeat=2)))
 print(list(itertools.combinations(array, 2)))
 
-# 注： yield 关键字可以把函数转变为
+# 注： yield 关键字可以把函数转变为 迭代器

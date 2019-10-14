@@ -84,4 +84,4 @@ class C3(C1, C2):
 a = C1(2)
 b = C2(5)
 c = C3()
-print(C1.num1, C2.num2, c.num())
+print(C1.num1, C2.num2, c.num()
