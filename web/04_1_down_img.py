@@ -22,3 +22,11 @@ soup = BeautifulSoup(text, 'lxml')
 img = soup.find('img')
 img_url = img['src']
 print(img_url)
+
+
+# 简单的下载一张图片
+url = 'https://c-ssl.duitang.com/uploads/item/201704/03/20170403005223_hGfyT.thumb.700_0.png'
+req = request.Request(url)
+data = request.urlopen(url).read()
+with open("D:/test.png",'wb') as f:
+    f.write(data)

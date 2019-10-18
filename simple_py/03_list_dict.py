@@ -84,11 +84,28 @@ print(a[3::-1])  # a[3],a[2],a[1],a[0]
 
 # 集合 set {...}
 seta = set([1, 2, 3])
-setb = set([3, 4]) 
-print(setb.intersection(seta)) # 交集 ==> {3}
-print(setb.union(seta)) # 并集 ==> {1, 2, 3, 4}
-print(setb.difference(seta)) # 差集 ==> {4}
-print(seta|setb) # 并集
-print(seta&setb) # 交集
-print(seta^setb) # 补集
-print(set() < seta) # seta 是空集的父集
+setb = set([3, 4])
+print(setb.intersection(seta))  # 交集 ==> {3}
+print(setb.union(seta))  # 并集 ==> {1, 2, 3, 4}
+print(setb.difference(seta))  # 差集 ==> {4}
+print(seta | setb)  # 并集
+print(seta & setb)  # 交集
+print(seta ^ setb)  # 补集
+print(set() < seta)  # seta 是空集的父集
+
+
+# tuple
+def func1(a, b, *others):
+    print("a = {}, b = {}".format(a, b))
+    print("others:", others)
+    pass
+
+
+# 只有一个数时要带逗号表示这是一个 tuple
+params = (5,)*2
+params = (5, 6)*2
+print(params)
+# output: (5, 5)
+print(*params)
+# output: 5 5
+# 参数解包运算符
