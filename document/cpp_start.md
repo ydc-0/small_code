@@ -1,5 +1,6 @@
 # Reference
 - [Standard C++ Library reference](http://www.cplusplus.com/reference/)
+- [C/C++ reference](https://en.cppreference.com/w/)
 
 # Notes
 

@@ -68,6 +68,26 @@
   - 可用 `*` 通配符
   - 递归查找，当前目录和其子目录
 
+### 压缩解压缩
+
+- zip 格式
+  - `zip [-r] <zip_file> <file1> [<file2> <folder3> ...]`
+  - 如果要压缩文件夹，需要带 -r 参数
+  - `unzip <zip_file> [-d <exdir>]`
+- tar 格式（仅打包，不压缩）
+  - `tar -cvf <tar_file.tar> <file or folders>`
+  - `tar -xvf <file.tar> [-C <exdir>]`
+  - 文件较多时可以选择不带 `-v` 加快速度
+- tar.gz 格式（常用压缩格式）
+  - tar 格式的基础上， 参数带 `-z` 即可
+  - `tar -zcvf <tar_file.tar.gz> <file or folders>`
+  - `tar -zxvf <file.tar.gz> [-C <exdir>]`
+- tar.bz2 格式 （压缩率高）
+  - 参数直接加 `-j`
+  - 如果 tar 不支持`-j`这个参数就先用 `bzip2 -d xxx.tar.bz2` 解压成 tar 文件
+- rar 格式需要安装软件
+  - `sudo apt-get install rar unrar`
+
 ## 显示/查看/打印
 
 ### echo

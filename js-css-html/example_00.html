@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- javascript 出于安全考虑，没有读取文件的方法 本文件保留用于学习 html/css/js -->
+<!-- 本文件中用到了 input、 button、 js 读写元素、css 过滤器 -->
+<!-- https://blog.csdn.net/huaweidong2011/article/details/17271067 -->
+<!-- HTML5 支持本地存储也无法解决读取文件的问题 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Unit Test Report</title>
+    <style type="text/css">
+      table {
+        font-family: arial;
+        font-size: 16px;
+        border-spacing: 0;
+        /* border: 2px solid black; */
+        border-collapse: collapse;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 2%;
+        text-align: left;
+      }
+      tr,
+      td {
+        padding: 12px;
+        border: 1px solid black;
+      }
+      tr.title {
+        border: none;
+        text-align: center;
+      }
+      th.title {
+        padding: 12px;
+        font-size: 24px;
+        /* border: 1px solid black; */
+        text-align: center;
+        /* background-color: burlywood; */
+      }
+    </style>
+    <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script> -->
+    <script type="text/javascript">
+      function get_xml_path() {
+        xml_path = document.getElementsByName("xml_path")[0].value;
+        return xml_path;
+      }
+      function LoadXmlFiles() {
+        yaml_path = get_xml_path();
+        var1 = document.getElementById("test");
+        var1.innerHTML = xml_path;
+      }
+      /* 加载完成立刻执行的方法，只能在加载 jquery 的情况下使用*/
+      /* $(function() { LoadxmlFiles();  }); */
+    </script>
+    <script></script>
+  </head>
+  <body>
+    <p>
+      yaml_path: <input type="text" name="xml_path" value="./" />
+      <button onclick="LoadXmlFiles()">Start</button>
+    </p>
+    <table id="">
+      <tr class="title">
+        <th class="title">All Unit Test Results :</th>
+      </tr>
+    </table>
+
+  </body>
+  <script type="text/javascript">
+    /* 默认加载当前目录 */
+    LoadXmlFiles();
+  </script>
+</html>
