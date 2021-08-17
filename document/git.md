@@ -225,7 +225,7 @@
 
 # Notes
 
-## patch
+## patch 补丁
 
 - [git fomat-patch 和 git am 用法](https://blog.csdn.net/u012719256/article/details/73338050)
 - [腾讯云社区](https://cloud.tencent.com/developer/section/1138664)
@@ -259,7 +259,7 @@
   - 更新远程仓库（删除远程仓库已删除分支的跟踪）
   - 在远程仓库删除分支后本地依然可以看到已删除分支时可用
 
-## .gitattributes
+## .gitattributes 设置文件属性
 
 - 可在仓库主目录添加 `.gitattributes` 文件，其内容可以如下
 
@@ -269,9 +269,26 @@
   *.sql diff=astextplain
   *.sql diff
   *.sql text=auto
+  *.md  eol=lf
   ```
 
   - [gitattributes 文档](https://git-scm.com/docs/gitattributes)
   - `diff = astextplain`(仅限 msysGit)：在生成 diff 之前,将这些文件(在扩展名为 .doc, .pdf, .rtf 等的条件下)转换为文本格式.
   - `diff`：将这些文件视为纯文本以生成其差异.
   - `text = auto`：自动将 GOL 中被认为是文本文件的文件中的 EOL 字符(到 LF)标准化.
+  - `eol=lf` 行尾为LF。
+
+## 使用 depth 后如何克隆完整项目
+
+- `--depth=1`可以限制克隆深度，不包含过多的历史记录
+- `git clone --depth=1 <repo>`
+- 但是这样的话就不能随意切分支，此时可使用
+- `git fetch --unshallow`
+
+## 浅克隆 submodule
+
+- StackOverflow Question - [How to make shallow git submodules?](https://stackoverflow.com/questions/2144406/how-to-make-shallow-git-submodules)
+- Git 2.10+ 版本支持：
+- `git config -f .gitmodules submodule.<name>.shallow true`
+- Git 2.9+ 版本支持：
+- `git clone url://to/source/repository --recursive --shallow-submodules`
